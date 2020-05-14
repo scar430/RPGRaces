@@ -1,7 +1,6 @@
 package rpgraces.races;
 
 import org.bukkit.Material;
-import org.bukkit.entity.Item;
 import org.bukkit.potion.PotionEffect;
 import org.bukkit.potion.PotionEffectType;
 
@@ -16,13 +15,13 @@ public class Race {
 	// Item that represents the race in menus.
 	public Material item;
 	
-	public Race(String newName, String effectName, int amplifier, Material newItem) {
+	public Race(String newName, PotionEffectType type, int amplifier, Material newItem) {
 		
 		
 		name = newName;
 		
 		// On ambient = true, the particle effects and buff indicator will not be displayed.
-		effect = new PotionEffect(PotionEffectType.getByName(effectName), 9999, amplifier, true);
+		effect = new PotionEffect(type, -1, amplifier, true);
 		
 		item = newItem;
 	}
